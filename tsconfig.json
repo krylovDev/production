@@ -4,7 +4,7 @@
     "noImplicitAny": true, // Подсвечивает места, где не указан тип
     "module": "ESNext",
     "target": "es5", // В какой ECMAScript код будет компилироваться
-    "jsx": "react",
+    "jsx": "react-jsx", // react-jsx для того, чтобы в каждый файл не импортировать React from 'react'
     "allowJs": true, // Позволяет обрабатывать jsx-файлы
     "moduleResolution": "node", // 99% - node
     "baseUrl": ".", // Для абсолютного импорта

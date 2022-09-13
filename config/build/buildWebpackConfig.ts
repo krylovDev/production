@@ -23,10 +23,10 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 		},
 		plugins: buildPlugins(options),
 		module: {
-			rules: buildLoaders(),
+			rules: buildLoaders(options),
 		},
 		resolve: buildResolvers(),
-		devtool: isDev ? 'inline-source-map' : undefined, // Позволяет видеть исходный код в DevTools. В prod отключаем
+		devtool: isDev ? 'inline-source-map' : false, // Позволяет видеть исходный код в DevTools. В prod отключаем
 		devServer: isDev ? buildDevServer(options) : undefined, // При prod-сборки не будут создаваться source-map
 	}
 }
