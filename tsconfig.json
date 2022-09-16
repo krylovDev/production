@@ -8,6 +8,9 @@
     "allowJs": true, // Позволяет обрабатывать jsx-файлы
     "moduleResolution": "node", // 99% - node
     "baseUrl": ".", // Для абсолютного импорта
+    "paths": {
+      "*": ["./src/*"]
+    },
     /* esModuleInterop позволяет работать с пакетами, которые используют common js,
      как с обычными пакетами с помощью import (require() module.exports) = common js */
     "esModuleInterop": true,

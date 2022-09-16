@@ -25,7 +25,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 		module: {
 			rules: buildLoaders(options),
 		},
-		resolve: buildResolvers(),
+		resolve: buildResolvers(options),
 		devtool: isDev ? 'inline-source-map' : false, // Позволяет видеть исходный код в DevTools. В prod отключаем
 		devServer: isDev ? buildDevServer(options) : undefined, // При prod-сборки не будут создаваться source-map
 	}
