@@ -1,0 +1,28 @@
+.Sidebar {
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  position: relative;
+  transition: width var(--animation-delay);
+}
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+  animation: sidebar-collapse ease-in-out var(--animation-delay);
+}
+
+@keyframes sidebar-collapse {
+  from {
+    width: var(--sidebar-width);
+  }
+  to {
+    width: var(--sidebar-width-collapsed);
+  }
+}
+
+.switchers {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+}

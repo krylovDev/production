@@ -1,7 +1,7 @@
-@import 'src/app/styles/reset';
-@import 'src/app/styles/variables/global';
-@import 'src/app/styles/themes/normal';
-@import 'src/app/styles/themes/dark';
+@import 'reset';
+@import 'variables/global';
+@import 'themes/normal';
+@import 'themes/dark';
 
 .app {
   font: var(--font-m);
@@ -10,4 +10,15 @@
   color: var(--primary-color);
 
   min-height: 100vh;
+
+  transition: all var(--animation-delay);
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
 }
