@@ -20,3 +20,4 @@
 
 #### Routes, linting, Jest
  - Настроен конфиг для router
+ - Добавлен webpack SVGr для svg, file-loader для jpeg,gif,png и т.п.
