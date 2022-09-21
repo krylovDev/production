@@ -1,4 +1,5 @@
 import React from 'react'
+import {useTranslation} from 'react-i18next'
 import {classNames} from 'shared/ib/classNames/classNames'
 import AppLink, {AppLinkTheme} from 'shared/UI/AppLink/AppLink'
 import {ThemeSwitcher} from 'widget'
@@ -9,6 +10,7 @@ interface NavbarProps {
 }
 
 const Navbar = ({className}: NavbarProps) => {
+
 	return (
 		<div className={classNames(cls.Navbar, {}, [className])}>
 			<div className={classNames(cls.links)}>
@@ -22,7 +24,8 @@ const Navbar = ({className}: NavbarProps) => {
 				<AppLink
 					to={'/about'}
 					theme={AppLinkTheme.SECONDARY}
-				>О сайте
+				>
+					О сайте
 				</AppLink>
 			</div>
 		</div>

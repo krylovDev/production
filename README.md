@@ -20,5 +20,6 @@
 
 #### Routes, Styles, linting, Jest
  - Настроен конфиг для router
- - Добавлен webpack SVGr для svg, file-loader для jpeg,gif,png и т.п.
- - Добавлен Sidebar, Navbar, ThemeSwitcher
+ - Добавлен webpack [SVGr](https://www.npmjs.com/package/@svgr/webpack) для svg, [file-loader](https://v4.webpack.js.org/loaders/file-loader/) для jpeg,gif,png и т.п.
+ - Добавлен [Sidebar](src/widget/Sidebar/UI/Sidebar/Sidebar.tsx), [Navbar](src/widget/Navbar/UI/Navbar.tsx), [ThemeSwitcher](src/shared/UI/ThemeSwitcher/ThemeSwitcher.tsx)
+ - Добавлен [i18n](https://react.i18next.com/). [Define plugin](https://webpack.js.org/plugins/define-plugin/). Добавлен [LangSwitcher](src/shared/UI/LangSwitcher/LangSwitcher.tsx)
