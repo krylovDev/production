@@ -1,5 +1,6 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import webpack, {DefinePlugin} from 'webpack'
 import {BuildOptions} from './types/config'
 
@@ -15,6 +16,8 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
 		}),
 		new DefinePlugin({  // С помощью DefinePlugin можно прокидывать в приложение глобальные переменные
 			__IS_DEV__: JSON.stringify(isDev)
-		})
+		}),
+		new webpack.HotModuleReplacementPlugin(),
+		new ReactRefreshWebpackPlugin()
 	]
 }
