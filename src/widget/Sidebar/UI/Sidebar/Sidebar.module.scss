@@ -5,6 +5,7 @@
   position: relative;
   transition: width var(--animation-delay);
 }
+
 .collapsed {
   width: var(--sidebar-width-collapsed);
   animation: sidebar-collapse ease-in-out var(--animation-delay);
@@ -14,6 +15,7 @@
   from {
     width: var(--sidebar-width);
   }
+
   to {
     width: var(--sidebar-width-collapsed);
   }

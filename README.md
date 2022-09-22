@@ -25,4 +25,5 @@
  - Добавлен [i18n](https://react.i18next.com/). [Define plugin](https://webpack.js.org/plugins/define-plugin/). Добавлен [LangSwitcher](src/shared/UI/LangSwitcher/LangSwitcher.tsx)
  - Добавлен [react-refresh-webpack-plugin](https://www.npmjs.com/package/@pmmmwh/react-refresh-webpack-plugin) для отображения изменений в Реакт компонентах без перезагрузки страницы и [hot-module-replacement-plugin](https://webpack.js.org/plugins/hot-module-replacement-plugin/) для стилей и т.п.
  - Настроен [ESLint](https://eslint.org/). Создан [.eslintrc.js](.eslintrc.js)
+ - Настроен [Stylelint](https://stylelint.io/). Создан [.stylelintrc.json](.stylelintrc.json)
 

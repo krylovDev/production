@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/ib/classNames/classNames';
 import Button, { ThemeButton } from 'shared/UI/Button/Button';
-import cls from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
 	className?: string
@@ -14,7 +13,7 @@ const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
   return (
     <Button
-      className={classNames(cls.LangSwitcher, {}, [className])}
+      className={classNames('', {}, [className])}
       theme={ThemeButton.CLEAR}
       onClick={toggle}
     >
