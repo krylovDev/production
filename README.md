@@ -27,4 +27,5 @@
  - Настроен [ESLint](https://eslint.org/). Создан [.eslintrc.js](.eslintrc.js)
  - Настроен [Stylelint](https://stylelint.io/). Создан [.stylelintrc.json](.stylelintrc.json)
  - Настроен [Jest](https://jestjs.io/ru/). Создан [jest.config.ts](./config/jest/jest.config.ts)
+ - Добавлен страница [NotFoundPage](src/pages/NotFoundPage/UI/NotFoundPage.tsx) и Loader (Spinner) 
 
