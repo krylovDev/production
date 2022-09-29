@@ -27,5 +27,8 @@
  - Настроен [ESLint](https://eslint.org/). Создан [.eslintrc.js](.eslintrc.js)
  - Настроен [Stylelint](https://stylelint.io/). Создан [.stylelintrc.json](.stylelintrc.json)
  - Настроен [Jest](https://jestjs.io/ru/). Создан [jest.config.ts](./config/jest/jest.config.ts)
- - Добавлен страница [NotFoundPage](src/pages/NotFoundPage/UI/NotFoundPage.tsx) и Loader (Spinner) 
+ - Добавлен страница [NotFoundPage](src/pages/NotFoundPage/UI/NotFoundPage.tsx) и Loader (Spinner)
+
+#### Storybook, RTL, Bundle analyzer, Error Boundary, UI tests
+- Добавлен [ErrorBoundary](src/app/providers/ErrorBoundary/UI/ErrorBoundary.tsx), компонент ошибки [PageError](src/widget/PageError/UI/PageError.tsx)
 

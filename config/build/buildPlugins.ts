@@ -5,7 +5,12 @@ import webpack, { DefinePlugin } from 'webpack';
 import { BuildOptions } from './types/config';
 
 // WebpackPluginInstance - тип для плагинов webpack
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins(
+  {
+    paths,
+    isDev,
+  }: BuildOptions,
+): webpack.WebpackPluginInstance[] {
   return [
     new HTMLWebpackPlugin({ // Минимизирует html-файл
       template: paths.html, // Файл index.html будет использоваться как шаблон
@@ -20,6 +25,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin(),
+    // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
+    // new ReactRefreshWebpackPlugin(),
   ];
 }
