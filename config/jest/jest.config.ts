@@ -3,9 +3,16 @@
  * https://jestjs.io/docs/configuration
  */
 
+// const path = require('path');
+
+import path from 'path';
+
 export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
+
+  // The root directory that Jest should scan for tests and modules within
+  rootDir: '../../',
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
@@ -24,6 +31,11 @@ export default {
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: [
     'node_modules',
+    'src',
+  ],
+  // Чтобы JEST понимал абсолютные пути
+  modulePaths: [
+    '<rootDir>src/',
   ],
 
   // An array of file extensions your modules use
@@ -35,10 +47,19 @@ export default {
     'json',
     'node',
   ],
-  // The root directory that Jest should scan for tests and modules within
-  rootDir: '../../',
+
   // The test environment that will be used for testing
   testEnvironment: 'jsdom',
+
+  // jest-dom
+  setupFilesAfterEnv: [
+    '<rootDir>config/jest/superTests.ts',
+  ],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    // jestEmptyComponent - mock, который будет использоваться для всех импортов в которых присутствует .svg
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,

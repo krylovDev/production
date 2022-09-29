@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/ib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import Button from 'shared/UI/Button/Button';
 import cls from './PageError.module.scss';
 
@@ -8,6 +8,7 @@ interface PageErrorProps {
 	className?: string
 }
 
+// TODO Добавить картинку. Улучшить дизайн окна ошибки
 const PageError = ({ className }: PageErrorProps) => {
   const { t } = useTranslation();
   const [count, setCount] = useState<number>(5);

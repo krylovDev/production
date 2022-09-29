@@ -20,5 +20,10 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./config/jest/superTests.ts",
+    "./config/**/*.tsx",
+    "./config/**/*.ts",
+  ]
 }

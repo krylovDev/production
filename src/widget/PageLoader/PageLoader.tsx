@@ -1,4 +1,4 @@
-import { classNames } from 'shared/ib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import Spinner from 'widget/Spinner/Spinner';
 import cls from './PageLoader.module.scss';
 

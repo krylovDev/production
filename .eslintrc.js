@@ -40,11 +40,24 @@ module.exports = {
     'import/extensions': 0,
     'no-underscore-dangle': 0,
     'import/no-extraneous-dependencies': 1,
-    'i18next/no-literal-string': [2, { markupOnly: true }],
+    'i18next/no-literal-string': [2, {
+      markupOnly: true,
+      /* Чтобы i18n не ругаелся на отсутствие перевода в data-testid */
+      ignoreAttribute: ['data-testid'],
+    }],
     camelcase: 0,
     'max-len': [2, { ignoreComments: true, code: 110 }],
   },
   globals: {
     __IS_DEV__: true,
   },
+  /* Перезаписываем правила правила */
+  overrides: [
+    {
+      files: ['**/src/**/*.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 0,
+      },
+    },
+  ],
 };
