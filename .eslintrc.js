@@ -42,7 +42,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 1,
     'i18next/no-literal-string': [2, { markupOnly: true }],
     camelcase: 0,
-    'max-len': [2, { ignoreComments: true }],
+    'max-len': [2, { ignoreComments: true, code: 110 }],
   },
   globals: {
     __IS_DEV__: true,
