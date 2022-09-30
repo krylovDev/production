@@ -27,6 +27,7 @@ export function buildPlugins(
     }),
     new webpack.HotModuleReplacementPlugin(),
   ];
+
   // Ниже плагины нужны только в dev-сборке
   if (isDev) {
     plugins.push(
