@@ -26,11 +26,11 @@ export function buildPlugins(
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
   ];
   // Ниже плагины нужны только в dev-сборке
   if (isDev) {
     plugins.push(
+      // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
       new ReactRefreshWebpackPlugin(),
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
