@@ -31,9 +31,9 @@ const PageError = ({ className }: PageErrorProps) => {
   return (
     <div className={classNames(cls.PageError, {}, [className])}>
       <h2>{t('Опаньки! Что-то пошло не так')}</h2>
-      <h3>
-        {`Страница перезагрузится через ${count} секунд`}
-      </h3>
+      {/* <h3> */}
+      {/*  {`Страница перезагрузится через ${count} секунд`} */}
+      {/* </h3> */}
       <Button onClick={reloadPage}>
         {t('Обновить страницу')}
       </Button>
