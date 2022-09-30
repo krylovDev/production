@@ -38,6 +38,7 @@ module.exports = {
     'react/function-component-definition': 0,
     'no-shadow': 0,
     'import/extensions': 0,
+    'linebreak-style': 0,
     'no-underscore-dangle': 0,
     'import/no-extraneous-dependencies': 1,
     'i18next/no-literal-string': [2, {
