@@ -23,7 +23,7 @@
   },
   "include": [
     "./config/jest/superTests.ts",
-    "./config/**/*.tsx",
-    "./config/**/*.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
   ]
 }

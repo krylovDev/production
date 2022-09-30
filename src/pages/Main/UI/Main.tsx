@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import BugButton from '../../../app/providers/ErrorBoundary/UI/BugButton';
 
-const Main = () => {
+const MainPage = () => {
   const { t } = useTranslation('main');
   return (
     <div>
@@ -12,4 +12,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainPage;

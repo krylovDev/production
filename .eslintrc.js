@@ -42,8 +42,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 1,
     'i18next/no-literal-string': [2, {
       markupOnly: true,
-      /* Чтобы i18n не ругаелся на отсутствие перевода в data-testid */
-      ignoreAttribute: ['data-testid'],
+      /* Чтобы i18n не ругался на отсутствие перевода в data-testid */
+      ignoreAttribute: ['data-testid', 'to'],
     }],
     camelcase: 0,
     'max-len': [2, { ignoreComments: true, code: 110 }],

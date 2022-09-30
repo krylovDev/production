@@ -33,3 +33,4 @@
 - Добавлен [ErrorBoundary](src/app/providers/ErrorBoundary/UI/ErrorBoundary.tsx), компонент ошибки [PageError](src/widget/PageError/UI/PageError.tsx)
 - Установлен [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) для отслеживания размера бандла
 - Установлен [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/). Написаны тесты на [Button](./src/shared/UI/Button/Button.test.tsx),[Sidebar](./src/widget/Sidebar/UI/Sidebar/Sidebar.test.tsx)
+- Установлен [Storybook](https://storybook.js.org/docs/react/get-started/introduction). Написана stories на каждую страницу и компонент
