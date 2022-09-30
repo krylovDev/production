@@ -12,7 +12,7 @@ export function buildPlugins(
     isDev,
   }: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HTMLWebpackPlugin({ // Минимизирует html-файл
       template: paths.html, // Файл index.html будет использоваться как шаблон
     }),
@@ -27,9 +27,16 @@ export function buildPlugins(
     }),
     new webpack.HotModuleReplacementPlugin(),
     // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
-    // new ReactRefreshWebpackPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
   ];
+  // Ниже плагины нужны только в dev-сборке
+  if (isDev) {
+    plugins.push(
+      new ReactRefreshWebpackPlugin(),
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+      }),
+    );
+  }
+
+  return plugins;
 }
