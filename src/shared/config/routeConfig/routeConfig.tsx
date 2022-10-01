@@ -24,10 +24,6 @@ export const routeConfig: Record<AppRoutes, RouteProps> = { // RouteProps - ти
     path: RoutePath.about,
     element: <AboutPage />,
   },
-  [AppRoutes.ABOUT]: {
-    path: RoutePath.about,
-    element: <AboutPage />,
-  },
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,
     element: <NotFoundPage />,

@@ -1,14 +1,14 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import RenderWithTranslation from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
+import componentsWithRender from 'shared/lib/tests/componentRender/componentRender';
 import Sidebar from 'widget/Sidebar/UI/Sidebar/Sidebar';
 
 describe('Sidebar', () => {
   test('отрисовка Sidebar', () => {
-    RenderWithTranslation(<Sidebar />);
+    componentsWithRender(<Sidebar />);
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
   test('toggle Sidebar on click button', () => {
-    RenderWithTranslation(<Sidebar />);
+    componentsWithRender(<Sidebar />);
     // Ожидаем, что sidebar отрисовался
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
 
