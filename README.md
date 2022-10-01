@@ -35,4 +35,4 @@
 - Установлен [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/). Написаны тесты на [Button](./src/shared/UI/Button/Button.test.tsx),[Sidebar](./src/widget/Sidebar/UI/Sidebar/Sidebar.test.tsx)
 - Установлен [Storybook](https://storybook.js.org/docs/react/get-started/introduction). Написана stories на каждую страницу и компонент
 - Установлен [Loki](https://loki.js.org/getting-started.html) для скриншотного тестирования в связке со Storybook
-
+- Настроен [Github Actions pipeline](.github/workflows/main.yaml). Автоматические тесты при pull-request или push в master. Добавлены скриншотные тесты.
