@@ -32,7 +32,7 @@ export function buildPlugins(
   if (isDev) {
     plugins.push(
       // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
-      new ReactRefreshWebpackPlugin(),
+      // new ReactRefreshWebpackPlugin(),
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
       }),

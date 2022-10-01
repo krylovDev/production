@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import LangSwitcher from 'shared/UI/LangSwitcher/LangSwitcher';
 
 export default {
-  title: 'widget/LangSwitcher',
+  title: 'shared/LangSwitcher',
   component: LangSwitcher,
   argTypes: {
     backgroundColor: { control: 'color' },

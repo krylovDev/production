@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Button, { ThemeButton } from './Button';
+import Button, { ButtonTheme } from './Button';
 
 describe('Button', () => {
   test('с текстом', () => {
@@ -8,7 +8,7 @@ describe('Button', () => {
     expect(screen.getByText('TEST')).toBeInTheDocument();
   });
   test('с темой', () => {
-    render(<Button theme={ThemeButton.CLEAR}>TEST</Button>);
+    render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
     expect(screen.getByText('TEST')).toHaveClass('clear');
     // Увидеть что отрисовалось
     screen.debug();

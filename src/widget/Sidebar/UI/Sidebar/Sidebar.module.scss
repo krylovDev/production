@@ -6,21 +6,6 @@
   transition: width var(--animation-delay);
 }
 
-.collapsed {
-  width: var(--sidebar-width-collapsed);
-  animation: sidebar-collapse ease-in-out var(--animation-delay);
-}
-
-@keyframes sidebar-collapse {
-  from {
-    width: var(--sidebar-width);
-  }
-
-  to {
-    width: var(--sidebar-width-collapsed);
-  }
-}
-
 .switchers {
   width: 100%;
   position: absolute;
@@ -31,4 +16,90 @@
 
 .lang {
   margin-left: 20px;
+}
+
+.collapsedBtn {
+  position: absolute;
+  right: -32px;
+  bottom: 32px;
+}
+
+.links {
+  margin-top: 20px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.items {
+  margin-left: 30px;
+}
+
+.item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 24px; //FIXME when state is isCollapsed height is more than other icons
+}
+
+.link {
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+  animation: var(--animation-delay) ease-in-out sidebar-collapsed;
+
+  .switchers {
+    flex-direction: column;
+    animation: var(--animation-delay) ease-in-out  switchers-collapsed;
+  }
+
+  .lang {
+    margin-left: 0;
+  }
+
+  .link {
+    opacity: 0;
+    //transition: var(--animation-delay) opacity;
+    animation: var(--animation-delay) ease-in-out link-collapsed;
+    width: 0;
+  }
+}
+
+@keyframes switchers-collapsed {
+  from {
+    flex-direction: row;
+  }
+
+  to {
+    flex-direction: column;
+  }
+}
+
+@keyframes sidebar-collapsed {
+  from {
+    width: var(--sidebar-width);
+  }
+
+  to {
+    width: var(--sidebar-width-collapsed);
+  }
+}
+
+@keyframes link-collapsed {
+  from {
+    opacity: 1;
+    width: 100%;
+  }
+
+  to {
+    opacity: 0;
+    width: 0;
+  }
 }

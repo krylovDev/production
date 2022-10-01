@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import AppLink, { AppLinkTheme } from 'shared/UI/AppLink/AppLink';
 
 export default {
-  title: 'widget/AppLink',
+  title: 'shared/AppLink',
   component: AppLink,
   argTypes: {
     backgroundColor: { control: 'color' },

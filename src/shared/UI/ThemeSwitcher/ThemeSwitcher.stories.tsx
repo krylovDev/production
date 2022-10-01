@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import ThemeSwitcher from 'shared/UI/ThemeSwitcher/ThemeSwitcher';
 
 export default {
-  title: 'widget/ThemeSwitcher',
+  title: 'shared/ThemeSwitcher',
   component: ThemeSwitcher,
   argTypes: {
     backgroundColor: { control: 'color' },

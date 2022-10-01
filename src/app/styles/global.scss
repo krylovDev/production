@@ -1,17 +1,23 @@
 :root {
   --font-family-main: consolas, "Times New Roman", serif;
-  --font-size-m: 16px;
-  --font-line-m: 24px;
+  // --- M --
+  --font-size-m: 1rem; // 16px;
+  --font-line-m: 1.5rem; // 24px;
   --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-  --font-size-l: 24px;
-  --font-line-l: 32px;
+  // --- L ---
+  --font-size-l: 1.5rem; // 24px
+  --font-line-l: 2rem; // 32px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  // --- XL ---
+  --font-size-xl: 2rem; // 32px;
+  --font-line-xl: 2.5rem; // 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
-  // Размеры
+  // --- Размеры ---
   --navbar-height: 50px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
 
-  // Анимация
+  // --- Анимация ---
   --animation-delay: 0.3s;
 }
