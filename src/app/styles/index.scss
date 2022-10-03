@@ -3,10 +3,13 @@
 @import "./global.scss";
 @import "./reset.scss";
 
-.app {
-  font: var(--font-m);
-  background: var(--bg-color);
+body {
   color: var(--primary-color);
+  font: var(--font-m);
+}
+
+.app {
+  background: var(--bg-color);
   min-height: 100vh;
   transition: all var(--animation-delay);
 }

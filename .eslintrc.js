@@ -21,6 +21,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'i18next',
+    'react-hooks',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -30,6 +31,10 @@ module.exports = {
     }],
     'react/react-in-jsx-scope': 0,
     'import/no-unresolved': 0,
+    // Проверяет хуки
+    'react-hooks/rules-of-hooks': 2,
+    // Проверяет deps в хуках
+    'react-hooks/exhaustive-deps': 2,
     'import/prefer-default-export': 0,
     'no-unused-vars': 1,
     'react/require-default-props': 0,
