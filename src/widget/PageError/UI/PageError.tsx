@@ -15,18 +15,24 @@ const PageError = ({ className }: PageErrorProps) => {
 
   const reloadPage = () => window.location.reload();
   const delayCount = () => setCount((count) => count - 1);
-  const timeout = () => setTimeout(delayCount, 1000);
+  const timeout = useCallback(() => setTimeout(delayCount, 1000), []);
   const timer = useCallback(() => {
     if (count > 0) {
       timeout();
     } else {
       reloadPage();
     }
-  }, [count]);
+  }, [
+    count,
+    timeout,
+  ]);
 
   useEffect(() => {
     timer();
-  }, [count]);
+  }, [
+    count,
+    timer,
+  ]);
 
   return (
     <div className={classNames(cls.PageError, {}, [className])}>
