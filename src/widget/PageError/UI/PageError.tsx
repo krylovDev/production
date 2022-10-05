@@ -11,7 +11,7 @@ interface PageErrorProps {
 // TODO Добавить картинку. Улучшить дизайн окна ошибки
 const PageError = ({ className }: PageErrorProps) => {
   const { t } = useTranslation();
-  /* const [count, setCount] = useState<number>(5);
+  const [count, setCount] = useState<number>(5);
   const reloadPage = () => window.location.reload();
   const delayCount = () => setCount((count) => count - 1);
   const timeout = useCallback(() => setTimeout(delayCount, 1000), []);
@@ -31,7 +31,7 @@ const PageError = ({ className }: PageErrorProps) => {
   }, [
     count,
     timer,
-  ]); */
+  ]);
 
   return (
     <div className={classNames(cls.PageError, {}, [className])}>
