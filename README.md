@@ -38,4 +38,6 @@
 - Настроен [Github Actions pipeline](.github/workflows/main.yaml). Автоматические тесты при pull-request или push в master. Добавлены скриншотные тесты.
 - Добавлены размеры M, L, XL для Button. Обновлён Storybook. Ссылки перенесены в Sidebar. Добавлены иконки для ссылок.
 - Установлен [reg-cli](https://github.com/reg-viz/reg-cli) для более удобного сравнения скриншотов для тестирования
-- Добавлен компонент [Modal](src/shared/UI/Modal/Modal.tsx) ([Portal](https://reactjs.org/docs/portals.html)).
+
+#### Data, Redux
+- Добавлен [Redux Toolkit](https://redux-toolkit.js.org/).

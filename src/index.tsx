@@ -1,3 +1,4 @@
+import { StoreProvider } from 'app/providers/StoreProvider';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { render } from 'react-dom';
@@ -7,13 +8,15 @@ import App from './app/App';
 import 'app/styles/index.scss';
 
 render(
-  <BrowserRouter>
-    {/* Без ErrorBoundary, если есть ошибки в App - приложение ломается */}
-    <ErrorBoundary>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </ErrorBoundary>
-  </BrowserRouter>,
+  <StoreProvider>
+    <BrowserRouter>
+      {/* Без ErrorBoundary, если есть ошибки в App - приложение ломается */}
+      <ErrorBoundary>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+  </StoreProvider>,
   document.getElementById('root'),
 );

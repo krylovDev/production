@@ -43,6 +43,7 @@ module.exports = {
     'react/function-component-definition': 0,
     'no-shadow': 0,
     'import/extensions': 0,
+    'no-param-reassign': 0, // для redux-toolkit
     'linebreak-style': 0,
     'no-underscore-dangle': 0,
     'import/no-extraneous-dependencies': 1,
