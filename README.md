@@ -39,5 +39,6 @@
 - Добавлены размеры M, L, XL для Button. Обновлён Storybook. Ссылки перенесены в Sidebar. Добавлены иконки для ссылок.
 - Установлен [reg-cli](https://github.com/reg-viz/reg-cli) для более удобного сравнения скриншотов для тестирования
 
-#### Data, Redux
+#### Database, Redux
 - Добавлен [Redux Toolkit](https://redux-toolkit.js.org/).
+- Установлен [json-server](https://www.npmjs.com/package/json-server) для имитации работы cервера
