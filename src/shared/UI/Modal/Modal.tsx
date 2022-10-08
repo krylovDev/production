@@ -1,3 +1,4 @@
+import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
   ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
@@ -21,9 +22,9 @@ const Modal = (props: ModalProps) => {
     isOpen,
     onClose,
   } = props;
-
   const [isClosed, setIsClosed] = useState<boolean>(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const { theme } = useTheme();
 
   const handleClickContent = (e: React.MouseEvent) => {
     e.stopPropagation();
