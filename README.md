@@ -41,4 +41,4 @@
 
 #### Database, Redux
 - Добавлен [Redux Toolkit](https://redux-toolkit.js.org/).
-- Установлен [json-server](https://www.npmjs.com/package/json-server) для имитации работы cервера
+- Установлен [json-server](https://www.npmjs.com/package/json-server) для имитации работы cервера.
