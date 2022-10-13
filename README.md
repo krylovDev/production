@@ -42,3 +42,6 @@
 #### Database, Redux
 - Добавлен [Redux Toolkit](https://redux-toolkit.js.org/).
 - Установлен [json-server](https://www.npmjs.com/package/json-server) для имитации работы cервера.
+
+#### Авторизация. Husky. Input. Работа с текстом. Lazy modal. Reducers, slices, async thunk
+- Добавлен [Lazy Modal](src/shared/UI/Modal/Modal.tsx), [Кастомный Input](src/shared/UI/Input)

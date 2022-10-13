@@ -11,6 +11,7 @@ interface ModalProps {
 	children?: ReactNode
   isOpen?: boolean
   onClose?: () => void
+  lazy?: boolean
 }
 
 const ANIMATION_DELAY = 300;
@@ -21,8 +22,10 @@ const Modal = (props: ModalProps) => {
     children,
     isOpen,
     onClose,
+    lazy,
   } = props;
   const [isClosed, setIsClosed] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
   const { theme } = useTheme();
 
@@ -46,6 +49,15 @@ const Modal = (props: ModalProps) => {
     }
   }, [handleClose]);
 
+  // Управление монтированием
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+    // При размонтировании - убираем Portal из DOM
+    return () => setIsMounted(false);
+  }, [isOpen]);
+
   useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', onKeyDown);
@@ -58,6 +70,11 @@ const Modal = (props: ModalProps) => {
     isOpen,
     onKeyDown,
   ]);
+
+  // с флагом lazy - модалку в DOM-дерево не монтируем
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
