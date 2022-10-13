@@ -45,3 +45,4 @@
 
 #### Авторизация. Husky. Input. Работа с текстом. Lazy modal. Reducers, slices, async thunk
 - Добавлен [Lazy Modal](src/shared/UI/Modal/Modal.tsx), [Кастомный Input](src/shared/UI/Input)
+- Добавлен husky pre-push. В конфиг [husky](.husky/pre-commit) добавлена проверка линтеров.
