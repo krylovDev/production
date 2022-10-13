@@ -1,20 +1,27 @@
+import { LoginModal } from 'features/AuthByUsername';
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Button, { ButtonTheme } from 'shared/UI/Button/Button';
-import Modal from 'shared/UI/Modal/Modal';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
 	className?: string
 }
 
-const Navbar = ({ className }: NavbarProps) => {
+const Navbar = (props: NavbarProps) => {
+  const {
+    className,
+  } = props;
   const { t } = useTranslation();
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
 
-  const handleToggleModal = useCallback(() => {
-    setIsModalOpened((prev) => !prev);
+  const handleCloseModal = useCallback(() => {
+    setIsModalOpened(false);
+  }, []);
+
+  const handleShowModal = useCallback(() => {
+    setIsModalOpened(true);
   }, []);
 
   return (
@@ -22,18 +29,14 @@ const Navbar = ({ className }: NavbarProps) => {
       <Button
         className={classNames(cls.links)}
         theme={ButtonTheme.CLEAR_INVERTED}
-        onClick={handleToggleModal}
+        onClick={handleShowModal}
       >
         {t('Войти')}
       </Button>
-      <Modal
+      <LoginModal
         isOpen={isModalOpened}
-        onClose={handleToggleModal}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        autem consequuntur cupiditate, dolor dolore expedita illo porro possimus, praesentium
-        quis rem tempora temporibus veritatis vero voluptas? Culpa dolorem facilis nesciunt?
-      </Modal>
+        onClose={handleCloseModal}
+      />
     </div>
   );
 };
