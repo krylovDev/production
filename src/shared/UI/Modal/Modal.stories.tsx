@@ -23,7 +23,7 @@ Primary.args = {
 };
 
 export const Dark = Template.bind({});
-Primary.args = {
+Dark.args = {
   isOpen: true,
   children: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
         autem consequuntur cupiditate, dolor dolore expedita illo porro possimus, praesentium
