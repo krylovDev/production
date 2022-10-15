@@ -46,3 +46,4 @@
 #### Авторизация. Husky. Input. Работа с текстом. Lazy modal. Reducers, slices, async thunk
 - Добавлен [Lazy Modal](src/shared/UI/Modal/Modal.tsx), [Кастомный Input](src/shared/UI/Input)
 - Добавлен husky pre-push. В конфиг [husky](.husky/pre-commit) добавлена проверка линтеров.
+- Добавлена [форма авторизации](src/features/AuthByUsername/UI/LoginForm/LoginForm.tsx). [UserSlice](src/entities/User/model/slice/userSlice.ts). Авторизация через redux-toolkit.
