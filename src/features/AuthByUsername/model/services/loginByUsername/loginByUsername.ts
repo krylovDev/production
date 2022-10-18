@@ -11,6 +11,7 @@ interface loginByUsernameProps {
 * loginByUsernameProps - то, что ожидаем на вход
  */
 
+//  dispatch #1
 export const loginByUsername = createAsyncThunk<User, loginByUsernameProps, {rejectValue: string}>(
   'login/loginByUsername',
   async (authData, thunkAPI) => {
@@ -21,12 +22,13 @@ export const loginByUsername = createAsyncThunk<User, loginByUsernameProps, {rej
       }
       // Записываем ключ в localStorage
       localStorage.setItem(USER_KEY, JSON.stringify(response.data));
-      // Записываем пользователя в authData
+      // Записываем пользователя в authData //  dispatch #2
       thunkAPI.dispatch(userActions.setAuthData(response.data));
-
+      //  dispatch #3
       return response.data;
     } catch (e) {
-      console.error(e);
+      console.log(e.message);
+      //  dispatch #2
       return thunkAPI.rejectWithValue('Неправильный логин или пароль');
     }
   },
