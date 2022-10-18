@@ -42,6 +42,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 1,
     'react/function-component-definition': 0,
     'no-shadow': 0,
+    'no-mixed-spaces-and-tabs': 0,
     'import/extensions': 0,
     'no-param-reassign': 0, // для redux-toolkit
     'linebreak-style': 0,
