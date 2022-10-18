@@ -28,11 +28,19 @@ export function buildPlugins(
     new webpack.HotModuleReplacementPlugin(),
   ];
 
+  /* plugins.push(
+    // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
+    // new ReactRefreshWebpackPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
+  ); */
+
   // Ниже плагины нужны только в dev-сборке
   if (isDev) {
     plugins.push(
-      // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
-      // new ReactRefreshWebpackPlugin(),
+    // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
+      new ReactRefreshWebpackPlugin(),
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
       }),
