@@ -1,4 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import {
+  memo, useCallback, useEffect, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Button from 'shared/UI/Button/Button';
@@ -9,7 +11,7 @@ interface PageErrorProps {
 }
 
 // TODO Добавить картинку. Улучшить дизайн окна ошибки
-const PageError = ({ className }: PageErrorProps) => {
+const PageError = memo(({ className }: PageErrorProps) => {
   const { t } = useTranslation();
   const [count, setCount] = useState<number>(5);
   const reloadPage = () => window.location.reload();
@@ -44,6 +46,6 @@ const PageError = ({ className }: PageErrorProps) => {
       </Button>
     </div>
   );
-};
+});
 
 export default PageError;

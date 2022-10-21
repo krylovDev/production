@@ -35,22 +35,6 @@
   margin-left: 30px;
 }
 
-.item {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  height: 24px; //FIXME when state is isCollapsed height is more than other icons
-}
-
-.link {
-  margin-left: 10px;
-  opacity: 1;
-}
-
-.icon {
-  fill: var(--inverted-primary-color);
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
   animation: var(--animation-delay) ease-in-out sidebar-collapsed;
@@ -89,17 +73,5 @@
 
   to {
     width: var(--sidebar-width-collapsed);
-  }
-}
-
-@keyframes link-collapsed {
-  from {
-    opacity: 1;
-    width: 100%;
-  }
-
-  to {
-    opacity: 0;
-    width: 0;
   }
 }

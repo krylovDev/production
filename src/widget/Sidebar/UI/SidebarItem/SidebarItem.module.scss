@@ -1,0 +1,36 @@
+.item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 24px; //FIXME when state is isCollapsed height is more than other icons
+}
+
+.link {
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    //transition: var(--animation-delay) opacity;
+    animation: var(--animation-delay) ease-in-out link-collapsed;
+    width: 0;
+  }
+}
+
+@keyframes link-collapsed {
+  from {
+    opacity: 1;
+    width: 100%;
+  }
+
+  to {
+    opacity: 0;
+    width: 0;
+  }
+}

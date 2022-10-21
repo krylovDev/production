@@ -1,6 +1,6 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+// import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import webpack, { DefinePlugin } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
@@ -40,7 +40,7 @@ export function buildPlugins(
   if (isDev) {
     plugins.push(
     // Не баг, а фича. ErrorBoundary неправильно отрабатывает при new ReactRefreshWebpackPlugin() в dev-сборке
-      new ReactRefreshWebpackPlugin(),
+    //   new ReactRefreshWebpackPlugin(),
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
       }),
