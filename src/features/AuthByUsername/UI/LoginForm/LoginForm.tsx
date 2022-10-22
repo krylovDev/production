@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import DynamicModuleLoader, { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import Button, { ButtonTheme } from 'shared/UI/Button/Button';
 import Input from 'shared/UI/Input/Input';
 import Text, { TextTheme } from 'shared/UI/Text/Text';
@@ -17,6 +18,7 @@ import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
 	className?: string
+  onSuccess: () => void
 }
 
 const initialReducers: ReducersList = {
@@ -27,15 +29,14 @@ const LoginForm = memo((props: LoginFormProps) => {
   const { t } = useTranslation();
   const {
     className,
+    onSuccess,
   } = props;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const error = useSelector(getLoginError);
   const isLoading = useSelector(getLoginLoading);
-
-  // В момент монтирования компонента добавляем редьюсер
 
   const handleChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
@@ -45,9 +46,13 @@ const LoginForm = memo((props: LoginFormProps) => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const handleLogin = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
+  const handleLogin = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
   }, [
+    onSuccess,
     dispatch,
     password,
     username,
