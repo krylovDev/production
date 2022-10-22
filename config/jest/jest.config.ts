@@ -64,6 +64,7 @@ export default {
   // A set of global variables that need to be available in all test environments
   globals: {
     __IS_DEV__: true,
+    __API__: '',
   },
 
   // All imported modules in your tests should be mocked automatically

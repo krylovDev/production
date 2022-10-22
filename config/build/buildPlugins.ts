@@ -10,6 +10,7 @@ export function buildPlugins(
   {
     paths,
     isDev,
+    apiUrl,
   }: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
   const plugins = [
@@ -24,6 +25,7 @@ export function buildPlugins(
     // С помощью DefinePlugin можно прокидывать в приложение глобальные переменные
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
     new webpack.HotModuleReplacementPlugin(),
   ];

@@ -46,6 +46,7 @@ module.exports = {
     'import/extensions': 0,
     'no-param-reassign': 0, // для redux-toolkit
     'linebreak-style': 0,
+    'no-undef': 0,
     'no-underscore-dangle': 0,
     'import/no-extraneous-dependencies': 1,
     'i18next/no-literal-string': [2, {
@@ -58,6 +59,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   /* Перезаписываем правила правила */
   overrides: [
