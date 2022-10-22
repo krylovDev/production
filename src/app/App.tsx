@@ -9,6 +9,7 @@ import './styles/index.scss';
 import {
   Suspense, useEffect, useMemo, useState,
 } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const { theme } = useTheme();

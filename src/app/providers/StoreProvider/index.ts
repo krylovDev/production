@@ -1,4 +1,7 @@
-import type { StateSchema } from './config/StateSchema';
+import type {
+  StateSchema,
+  ThunkConfig,
+} from './config/StateSchema';
 import StoreProvider from './UI/StoreProvider';
 
 export {
@@ -9,4 +12,5 @@ export {
 export {
   StoreProvider,
   StateSchema,
+  ThunkConfig,
 };

@@ -1,8 +1,12 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
+  MutableRefObject,
   ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import {
+  classNames,
+  Modes,
+} from 'shared/lib/classNames/classNames';
 import Portal from 'shared/UI/Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -26,7 +30,7 @@ const Modal = (props: ModalProps) => {
   } = props;
   const [isClosed, setIsClosed] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout>>() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const { theme } = useTheme();
 
   const handleClickContent = (e: React.MouseEvent) => {
@@ -76,7 +80,7 @@ const Modal = (props: ModalProps) => {
     return null;
   }
 
-  const mods: Record<string, boolean> = {
+  const mods: Modes = {
     [cls.opened]: isOpen,
     [cls.closed]: isClosed,
   };

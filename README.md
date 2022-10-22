@@ -48,6 +48,7 @@
 - Добавлен husky pre-push. В конфиг [husky](.husky/pre-commit) добавлена проверка линтеров.
 - Добавлена [форма авторизации](src/features/AuthByUsername/UI/LoginForm/LoginForm.tsx). [UserSlice](src/entities/User/model/slice/userSlice.ts). Авторизация через redux-toolkit.
 
-#### Async reducers. Тесты. Instans API. TS strict mode. Модуль профиля
+#### Async reducers. Тесты. Instance API. TS strict mode. Модуль профиля
 - Добавлен [Reducer Manager](src/app/providers/StoreProvider/config/reducerManager.ts) и [DynamicModuleLoader](src/shared/lib/components/DynamicModuleLoader.tsx), чтобы в runtime добавлять и удалять новые редьюсеры
 - Создан класс [TestAsyncThunk](src/shared/lib/tests/TestAsyncThunk/TestAsyncThunk.ts) для тестирования
+- Добавлен [Instance API](src/shared/api/api.ts) для запросов

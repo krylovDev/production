@@ -1,19 +1,41 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { USER_KEY } from 'shared/constants/localStorage';
-import { ProfileSchema } from '../types/Profile.type';
+import {
+  createSlice,
+  PayloadAction,
+} from '@reduxjs/toolkit';
+import { fetchProfileData } from '../services/fetchProfileData/getProfileData';
+import {
+  Profile,
+  ProfileSchema,
+} from '../types/Profile.type';
 
 const initialState: ProfileSchema = {
-  data: null,
+  data: undefined,
   readonly: true,
   isLoading: false,
-  error: null,
+  error: undefined,
 };
 
 export const profileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {
-
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchProfileData.pending, (state) => {
+        state.error = undefined;
+        state.isLoading = true;
+      })
+      .addCase(
+        fetchProfileData.fulfilled,
+        (state, action: PayloadAction<Profile>) => {
+          state.isLoading = false;
+          state.data = action.payload;
+        },
+      )
+      .addCase(fetchProfileData.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
 
