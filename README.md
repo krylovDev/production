@@ -54,5 +54,6 @@
 - Добавлен [Instance API](src/shared/api/api.ts) для запросов
 
 #### Модуль профиля. Avatar. Редактирование и сохранение. Приватные роуты
-- Добавлены кастомные компоненты [Input](src/shared/UI/Input/Input.tsx), [Select](src/shared/UI/Select/Select.tsx), [Avatar](src/shared/UI/Avatar/Avatar.tsx). Дополнены Select'ы для [Country](src/entities/Country/UI/CountrySelect/CountrySelect.tsx) и [Currency](src/entities/Currency/UI/Currency/Currency.tsx).
+- Добавлены кастомные компоненты [Input](src/shared/UI/Input/Input.tsx), [Select](src/shared/UI/Select/Select.tsx), [Avatar](src/shared/UI/Avatar/Avatar.tsx). 
+- Дополнены Select'ы для [Country](src/entities/Country/UI/CountrySelect/CountrySelect.tsx) и [Currency](src/entities/Currency/UI/CurrencySelect/CurrencySelect.tsx).
 - Создана [Страница пользователя](src/pages/Profile/UI/ProfilePage.tsx)
