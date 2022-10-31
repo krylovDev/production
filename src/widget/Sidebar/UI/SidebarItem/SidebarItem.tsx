@@ -1,4 +1,6 @@
+import { getUserAuthData } from 'entities/User';
 import React, { memo } from 'react';
+import { useSelector } from 'react-redux';
 import AboutIcon from 'shared/assets/icons/about.svg';
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -18,6 +20,13 @@ const SidebarItem = memo((props: SidebarItemProps) => {
     item,
     collapsed,
   } = props;
+
+  const isAuth = useSelector(getUserAuthData);
+
+  // Cкрывает ссылки из Sidebar неавторизованны юзерам
+  if (item.authOnly && !isAuth) {
+    return null;
+  }
 
   return (
     <AppLink

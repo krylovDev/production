@@ -1,16 +1,17 @@
 import {
   ChangeEvent, InputHTMLAttributes, memo, ReactEventHandler, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Modes } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
 	className?: string
-	value?: string
+	value?: string | number
 	onChange?: (value: string) => void
   autofocus?: boolean
+  readonly?: boolean
 }
 
 const Input = memo((props: InputProps) => {
@@ -21,12 +22,16 @@ const Input = memo((props: InputProps) => {
     type = 'text',
     placeholder,
     autofocus,
+    readonly,
     ...otherProps
   } = props;
 
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [caretPosition, setCaretPosition] = useState<number>(0);
   const ref = useRef<HTMLInputElement>(null);
+
+  // Показываем каретку, если инпут в фокусе и режим редактирования
+  const isCaretVisible = isFocused && !readonly;
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
@@ -51,8 +56,12 @@ const Input = memo((props: InputProps) => {
   // Двигаем каретку в выбранное место
   const onSelectHandler = useCallback((e: any) => setCaretPosition(e?.target?.selectionStart || 0), []);
 
+  const mods: Modes = {
+    [cls.eadonly]: readonly,
+  };
+
   return (
-    <div className={classNames(cls.InputWrapper, {}, [className])}>
+    <div className={classNames(cls.InputWrapper, mods, [className])}>
       {/* Если есть placeholder - отображаем */}
       {placeholder && (
       <div className={cls.placeholder}>
@@ -69,10 +78,11 @@ const Input = memo((props: InputProps) => {
           onBlur={onBlurHandler}
           onFocus={onFocusHandler}
           onSelect={onSelectHandler}
+          readOnly={readonly}
           {...otherProps}
         />
         {/* Когда в фокусе - добавляем каретку */}
-        {isFocused
+        {isCaretVisible
           && (
           <span
             className={cls.caret}

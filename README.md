@@ -52,3 +52,7 @@
 - Добавлен [Reducer Manager](src/app/providers/StoreProvider/config/reducerManager.ts) и [DynamicModuleLoader](src/shared/lib/components/DynamicModuleLoader.tsx), чтобы в runtime добавлять и удалять новые редьюсеры
 - Создан класс [TestAsyncThunk](src/shared/lib/tests/TestAsyncThunk/TestAsyncThunk.ts) для тестирования
 - Добавлен [Instance API](src/shared/api/api.ts) для запросов
+
+#### Модуль профиля. Avatar. Редактирование и сохранение. Приватные роуты
+- Добавлены кастомные компоненты [Input](src/shared/UI/Input/Input.tsx), [Select](src/shared/UI/Select/Select.tsx), [Avatar](src/shared/UI/Avatar/Avatar.tsx). Дополнены Select'ы для [Country](src/entities/Country/UI/CountrySelect/CountrySelect.tsx) и [Currency](src/entities/Currency/UI/Currency/Currency.tsx).
+- Создана [Страница пользователя](src/pages/Profile/UI/ProfilePage.tsx)

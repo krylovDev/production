@@ -1,3 +1,3 @@
 import { lazy } from 'react';
 
-export const ProfilePageAsync = lazy(() => import('./Profile'));
+export const ProfilePageAsync = lazy(() => import('./ProfilePage'));
