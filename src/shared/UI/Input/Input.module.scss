@@ -25,6 +25,10 @@
   position: relative;
 }
 
+.readonly {
+  opacity: 0.7;
+}
+
 .caret {
   position: absolute;
   height: 3px;

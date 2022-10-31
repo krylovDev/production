@@ -1,5 +1,6 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
+  memo,
   MutableRefObject,
   ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
@@ -20,7 +21,7 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-const Modal = (props: ModalProps) => {
+const Modal = memo((props: ModalProps) => {
   const {
     className,
     children,
@@ -98,6 +99,6 @@ const Modal = (props: ModalProps) => {
       </div>
     </Portal>
   );
-};
+});
 
 export default Modal;
