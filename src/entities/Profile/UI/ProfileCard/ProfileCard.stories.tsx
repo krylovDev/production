@@ -25,7 +25,7 @@ Primary.args = {
     firstName: 'Vladimir',
     lastName: 'Krylov',
     username: 'krylovDev',
-    avatar,
+    avatar: 'https://avatars.githubusercontent.com/u/77838663?v=4',
   },
 };
 
