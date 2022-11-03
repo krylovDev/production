@@ -1,7 +1,7 @@
 import {
   getProfileError,
   getProfileForm, getProfileLoading,
-  getProfileReadonly,
+  getProfileReadonly, getProfileValidateErrors,
   profileActions,
   updateProfileData,
 } from 'entities/Profile';
@@ -20,6 +20,7 @@ interface ProfileHeaderProps {
 
 const ProfileHeader = memo((props: ProfileHeaderProps) => {
   const { t } = useTranslation('profile');
+  const validateErrors = useSelector(getProfileValidateErrors);
   const dispatch = useAppDispatch();
   const {
     className,

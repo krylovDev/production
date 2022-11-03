@@ -11,6 +11,7 @@ export function buildPlugins(
     paths,
     isDev,
     apiUrl,
+    project,
   }: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
   const plugins = [
@@ -26,6 +27,7 @@ export function buildPlugins(
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
+      __PROJECT: JSON.stringify(project),
     }),
     new webpack.HotModuleReplacementPlugin(),
   ];

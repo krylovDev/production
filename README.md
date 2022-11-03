@@ -1,3 +1,6 @@
+![GitHub top language](https://img.shields.io/github/languages/top/krylovDev/production)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/krylovDev/production?color=greeb)
+
 ### Файловая структура: [*Feature-Sliced Design*](https://feature-sliced.design/ru/)
 
 1. **Shared** — переиспользуемый код, не имеющий отношения к специфике приложения/бизнеса.
