@@ -40,6 +40,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   const readonly = useSelector(getProfileReadonly);
 
   useEffect(() => {
+    console.log('');
     if (__PROJECT__ !== 'storybook') {
       dispatch(fetchProfileData());
     }
