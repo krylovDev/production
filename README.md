@@ -60,3 +60,5 @@
 - Добавлены кастомные компоненты [Input](src/shared/UI/Input/Input.tsx), [Select](src/shared/UI/Select/Select.tsx), [Avatar](src/shared/UI/Avatar/Avatar.tsx). 
 - Дополнены Select'ы для [Country](src/entities/Country/UI/CountrySelect/CountrySelect.tsx) и [Currency](src/entities/Currency/UI/CurrencySelect/CurrencySelect.tsx).
 - Создана [Страница пользователя](src/pages/Profile/UI/ProfilePage.tsx)
+
+#### Статьи, комментарии. Нормализация данных. Блочная структура. Union типы. Skeleton. Protected Routes
