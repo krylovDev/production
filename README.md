@@ -62,4 +62,6 @@
 - Создана [Страница пользователя](src/pages/Profile/UI/ProfilePage.tsx)
 
 #### Статьи, комментарии. Нормализация данных. Блочная структура. Union типы. Skeleton. Protected Routes
-- Создана страница Статьи. Конфиг вебпака подправлен
+- Добавлена страница [статей](src/pages/ArticlesPage/UI/ArticlesPage/ArticlesPage.tsx), а также для каждой отдельной [статьи](src/pages/ArticleDetailsPage/UI/ArticleDetailsPage/ArticleDetailsPage.tsx).
+- Добавлены компоненты для наполнения статьи: [Текст](src/entities/Article/UI/ArticleTextBlockComponent/ArticleTextBlockComponent.module.scss), [Код](src/entities/Article/UI/ArticleCodeBlockComponent/ArticleCodeBlockComponent.tsx), [Изображение](src/entities/Article/UI/ArticleImageBlockComponent/ArticleImageBlockComponent.tsx)
+- Добавлен компонент для загрузки [Skeleton](src/shared/UI/Skeleton/Skeleton.tsx)

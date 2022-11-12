@@ -21,6 +21,7 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   const {
     children,
     reducers,
+    // Reducer компонента размонтируется по умолчанию. Опцию можно отключить передав false
     removeAfterUnmount = true,
   } = props;
   const store = useStore() as ReduxStoreWithManager;
