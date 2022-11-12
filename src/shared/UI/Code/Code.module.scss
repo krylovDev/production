@@ -1,0 +1,22 @@
+.Code {
+  position: relative;
+  border: 1px solid var(--primary-color);
+  padding: 20px;
+  background: var(--code-bg);
+  overflow: auto; // Чтобы появлялся скрол
+}
+
+.copyBtn {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.copyIcon {
+  stroke: var(--primary-color);
+}
+
+.copyText {
+  margin-right: 10px;
+}

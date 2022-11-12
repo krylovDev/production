@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
+import { AppRoutes } from 'shared/config/routeConfig/routeConfig';
 import { Profile } from '../../types/Profile.type';
 
 //  dispatch #1
@@ -15,7 +16,7 @@ export const fetchProfileData = createAsyncThunk<
 	      rejectWithValue,
 	    } = thunkAPI;
 	    try {
-	      const response = await extra.api.get<Profile>('/profile');
+	      const response = await extra.api.get<Profile>(`/${AppRoutes.PROFILE}`);
 
 	      if (!response.data) {
 	        throw new Error();
