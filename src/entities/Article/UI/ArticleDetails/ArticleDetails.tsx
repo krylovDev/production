@@ -1,7 +1,6 @@
 import {
   memo,
   useCallback,
-  useEffect,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -10,6 +9,7 @@ import EyeIcon from 'shared/assets/icons/article-eye.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import DynamicModuleLoader, { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import Avatar from 'shared/UI/Avatar/Avatar';
 import Icon from 'shared/UI/Icon/Icon';
 import Skeleton, { ARTICLE_Size, CIRCLE_Size } from 'shared/UI/Skeleton/Skeleton';
@@ -47,6 +47,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const error = useSelector(getArticleDetailsError);
 
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
+  });
+
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
@@ -77,15 +81,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         return null;
     }
   }, []);
-
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id));
-    }
-  }, [
-    dispatch,
-    id,
-  ]);
 
   let content;
 

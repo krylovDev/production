@@ -65,3 +65,5 @@
 - Добавлена страница [статей](src/pages/ArticlesPage/UI/ArticlesPage/ArticlesPage.tsx), а также для каждой отдельной [статьи](src/pages/ArticleDetailsPage/UI/ArticleDetailsPage/ArticleDetailsPage.tsx).
 - Добавлены компоненты для наполнения статьи: [Текст](src/entities/Article/UI/ArticleTextBlockComponent/ArticleTextBlockComponent.module.scss), [Код](src/entities/Article/UI/ArticleCodeBlockComponent/ArticleCodeBlockComponent.tsx), [Изображение](src/entities/Article/UI/ArticleImageBlockComponent/ArticleImageBlockComponent.tsx)
 - Добавлен компонент для загрузки [Skeleton](src/shared/UI/Skeleton/Skeleton.tsx)
+- Реализовано отображение комментариев из базы данных на странице статьи
+- Добавлен [articleDetailsCommentsSlice](src/pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice.ts) с применением [createEntityAdapter](https://redux-toolkit.js.org/api/createEntityAdapter) для [нормализации данных](https://redux.js.org/usage/structuring-reducers/normalizing-state-shape)
