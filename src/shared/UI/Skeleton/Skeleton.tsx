@@ -8,6 +8,7 @@ export enum ARTICLE_Size {
 }
 
 export enum CIRCLE_Size {
+	CIRCLE_SIZE_S='circle_size_s',
 	CIRCLE_SIZE_M='circle_size_m',
 	CIRCLE_SIZE_L='circle_size_l',
 	CIRCLE_SIZE_full='circle_size_full'
@@ -37,8 +38,9 @@ const Skeleton = (props: SkeletonProps) => {
   const mods = {
     [cls.isArticle]: isArticle,
     [cls.isCircle]: isCircle,
-	  [cls.circle_size_l]: isCircle && size === CIRCLE_Size.CIRCLE_SIZE_L,
+	  [cls.circle_size_s]: isCircle && size === CIRCLE_Size.CIRCLE_SIZE_S,
 	  [cls.circle_size_m]: isCircle && size === CIRCLE_Size.CIRCLE_SIZE_M,
+	  [cls.circle_size_l]: isCircle && size === CIRCLE_Size.CIRCLE_SIZE_L,
 	  [cls.article_size_l]: isArticle && size === ARTICLE_Size.ARTICLE_SIZE_L,
 	  [cls.article_size_m]: isArticle && size === ARTICLE_Size.ARTICLE_SIZE_M,
 	  [cls.article_size_text]: isArticle && size === ARTICLE_Size.ARTICLE_SIZE_text,
