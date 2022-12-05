@@ -67,3 +67,6 @@
 - Добавлен компонент для загрузки [Skeleton](src/shared/UI/Skeleton/Skeleton.tsx)
 - Реализовано отображение комментариев из базы данных на странице статьи
 - Добавлен [articleDetailsCommentsSlice](src/pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice.ts) с применением [createEntityAdapter](https://redux-toolkit.js.org/api/createEntityAdapter) для [нормализации данных](https://redux.js.org/usage/structuring-reducers/normalizing-state-shape)
+
+#### Профили, Infinite Scroll, Intersection API, Отправка комментариев, профили пользователей.
+ - Добавлена возможность оставлять комментарии. Доступны сущности профилей. Редактирование только своего профиля.
