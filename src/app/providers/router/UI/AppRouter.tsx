@@ -17,6 +17,7 @@ const AppRouter = () => {
         </div>
       </Suspense>
     );
+
     return (
       <Route
         key={route.path}

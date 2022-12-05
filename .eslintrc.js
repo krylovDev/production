@@ -55,7 +55,7 @@ module.exports = {
       ignoreAttribute: ['data-testid', 'to'],
     }],
     camelcase: 0,
-    'max-len': [2, { ignoreComments: true, code: 110 }],
+    'max-len': [2, { ignoreComments: true, code: 120 }],
   },
   globals: {
     __IS_DEV__: true,

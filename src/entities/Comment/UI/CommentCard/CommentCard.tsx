@@ -1,5 +1,7 @@
 import { memo } from 'react';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
+import AppLink from 'shared/UI/AppLink/AppLink';
 import Avatar, { AVATAR_Size } from 'shared/UI/Avatar/Avatar';
 import Skeleton, { CIRCLE_Size } from 'shared/UI/Skeleton/Skeleton';
 import Text from 'shared/UI/Text/Text';
@@ -8,7 +10,7 @@ import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
 	className?: string
-  comment: Comment;
+  comment?: Comment;
   isLoading?: boolean;
 }
 
@@ -21,7 +23,7 @@ const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentCard, {}, [className])}>
+      <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Skeleton
             isCircle
@@ -43,20 +45,27 @@ const CommentCard = memo((props: CommentCardProps) => {
     );
   }
 
+  if (!comment) {
+    return null;
+  }
+
   return (
     <div className={classNames(cls.CommentCard, {}, [className])}>
-      <div className={cls.header}>
-        {comment.user.avatar
-          ? <Avatar src={comment.user.avatar} size={AVATAR_Size.S} />
+      <AppLink
+        className={cls.header}
+        to={`${RoutePath.profile}/${comment?.user.id}`}
+      >
+        {comment?.user.avatar
+          ? <Avatar src={comment?.user.avatar} size={AVATAR_Size.S} />
           : null}
         <Text
           className={cls.username}
-          title={comment.user.username}
+          title={comment?.user.username}
         />
-      </div>
+      </AppLink>
       <Text
         className={cls.text}
-        text={comment.text}
+        text={comment?.text}
       />
     </div>
   );
