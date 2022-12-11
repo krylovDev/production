@@ -1,12 +1,10 @@
 import { getUserAuthData } from 'entities/User';
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
-import AboutIcon from 'shared/assets/icons/about.svg';
-import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import AppLink, { AppLinkTheme } from 'shared/UI/AppLink/AppLink';
-import { ISidebarItem } from 'widget/Sidebar/model/SidebarItems';
+import { ISidebarItem } from 'widget/Sidebar/model/types/sidebar';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
