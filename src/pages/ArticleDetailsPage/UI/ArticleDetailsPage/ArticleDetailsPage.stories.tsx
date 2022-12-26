@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Article } from 'entities/Article/model/types/article';
 import React from 'react';
 import {
   ArticleType,
@@ -17,7 +18,7 @@ export default {
 
 const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
 
-const article = {
+const article: Article = {
   id: '1',
   title: 'JavaScript news',
   subtitle: 'Что нового в JS за 2022 год?',
@@ -26,6 +27,10 @@ const article = {
   views: 1022,
   createdAt: '26.02.2022',
   type: [ArticleType.IT],
+  user: {
+    id: '1',
+    username: 'Admin',
+  },
   blocks: [
     {
       id: '1',

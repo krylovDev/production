@@ -8,7 +8,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { ISidebarItem } from '../types/sidebar';
 
 export const getSidebarItems = createSelector(
-  getUserAuthData,
+  getUserAuthData, // Получаем данные о пользователе
   (userData) => {
     const SidebarItemsList: ISidebarItem[] = [
       {
@@ -22,7 +22,7 @@ export const getSidebarItems = createSelector(
         Icon: AboutIcon,
       },
     ];
-    if (userData) {
+    if (userData) { // Доступ только авторизованным пользователям
       SidebarItemsList.push(
         {
           path: `${RoutePath.profile}/${userData.id}`,

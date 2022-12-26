@@ -11,6 +11,7 @@ import DynamicModuleLoader, { ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import Avatar from 'shared/UI/Avatar/Avatar';
+import Button from 'shared/UI/Button/Button';
 import Icon from 'shared/UI/Icon/Icon';
 import Skeleton, { ARTICLE_Size, CIRCLE_Size } from 'shared/UI/Skeleton/Skeleton';
 import Text, { TextAlign, TextSize, TextTheme } from 'shared/UI/Text/Text';

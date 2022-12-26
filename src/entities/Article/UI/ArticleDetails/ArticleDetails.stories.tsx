@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Article } from 'entities/Article/model/types/article';
 import React from 'react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import {
@@ -17,7 +18,7 @@ export default {
 
 const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
 
-const article = {
+const article: Article = {
   id: '1',
   title: 'JavaScript news',
   subtitle: 'Что нового в JS за 2022 год?',
@@ -25,6 +26,10 @@ const article = {
   img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1',
+    username: 'Admin',
+  },
   type: [ArticleType.IT],
   blocks: [
     {

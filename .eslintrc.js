@@ -30,6 +30,7 @@ module.exports = {
       extensions: ['.js', '.jsx', '.tsx'],
     }],
     'react/react-in-jsx-scope': 0,
+    'react/no-array-index-key': 0,
     'import/no-unresolved': 0,
     // Проверяет хуки
     'react-hooks/rules-of-hooks': 2,
@@ -62,7 +63,7 @@ module.exports = {
     __API__: true,
     __PROJECT__: true,
   },
-  /* Перезаписываем правила правила */
+  /* Перезаписываем правила */
   overrides: [
     {
       files: ['**/src/**/*.{ts,tsx}'],
